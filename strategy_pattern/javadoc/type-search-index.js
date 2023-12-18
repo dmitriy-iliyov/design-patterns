@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"org.example","l":"BubbleSort"},{"p":"org.example","l":"Collection"},{"p":"org.example","l":"InserSort"},{"p":"org.example","l":"Main"},{"p":"org.example","l":"SelectionSort"},{"p":"org.example","l":"ShellSort"},{"p":"org.example","l":"Sort"}]
