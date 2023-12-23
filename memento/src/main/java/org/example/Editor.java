@@ -17,13 +17,16 @@ public class Editor {
     public void addShape(Shape shape){
         allShapes.add(shape);
     }
+
     public void delShape(Shape shape){
         allShapes.remove(shape);
     }
+
     public void printShapes(){
         for(Shape shape: allShapes)
             System.out.println(shape);
     }
+
     public byte[] backup(){
         this.shapeCount = allShapes.size();
         ByteArrayOutputStream baos = null;
@@ -38,6 +41,7 @@ public class Editor {
             return baos.toByteArray();
         }
     }
+
     public List<Shape> restore(byte [] data) {
         List<Shape> restoredShapes = new ArrayList<>();
         try {
