@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"org.example","l":"Circle"},{"p":"org.example","l":"CircleAdapter"},{"p":"org.example","l":"Main"},{"p":"org.example","l":"Point"},{"p":"org.example","l":"PointInterface"}]
