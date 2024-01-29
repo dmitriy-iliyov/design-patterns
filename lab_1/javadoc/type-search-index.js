@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"org.example","l":"Cl1"},{"p":"org.example","l":"Cl2"},{"p":"org.example","l":"Cl3"},{"p":"org.example","l":"I2"},{"p":"org.example","l":"I3"},{"p":"org.example","l":"If1"},{"p":"org.example","l":"If2"},{"p":"org.example","l":"If3"},{"p":"org.example","l":"Main"}]
