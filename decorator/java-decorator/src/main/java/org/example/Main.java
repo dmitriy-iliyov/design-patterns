@@ -1,11 +1,20 @@
 package org.example;
 
-//Визначити специфікації класів та реалізацію методів для подання
-//        вибраного графічного елементу у редакторі векторної графіки.
-//        Забезпечити можливість динамічної зміни відображення елементу.
 
 public class Main {
+    private final static int CANVAS_SIZE = 500;
+
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Canvas canvas = Canvas.getCanvas();
+        Circle circle = new Circle(random(),random(),30);
+        Circle circle1 = new Circle(random(),random(),20);
+        CircleDecorator circleDecorator = new CircleDecorator(circle1);
+        canvas.addFigure(circle, circleDecorator);
+        canvas.setSize(CANVAS_SIZE, CANVAS_SIZE);
+        canvas.setVisible(true);
+    }
+
+    public static int random(){
+        return (int) (Math.random() * ((CANVAS_SIZE)+1));
     }
 }
