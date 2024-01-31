@@ -1,28 +1,21 @@
 package org.example;
 
-import java.util.HashMap;
-import java.util.Map;
 
 public class Collection {
-    private Map<String, Sort> sortsMap;
+    private Sort sort;
     private int [] array;
     private int count;
 
     public Collection(int count) {
-        this.sortsMap = new HashMap<>();
-        this.sortsMap.put("bubble", new BubbleSort());
-        this.sortsMap.put("insert", new InserSort());
-        this.sortsMap.put("shell", new ShellSort());
-        this.sortsMap.put("selection", new SelectionSort());
         this.count = count;
         this.array = getRandomArray();
     }
 
-    public void sortArray(String sortKey, int leastOrMax){
-        if (leastOrMax == 1)
-            sortsMap.get(sortKey).sortLeastToMax(this.array);
-        else if( leastOrMax == 0)
-            sortsMap.get(sortKey).sortMaxToLeast(this.array);
+    public void sortArray(boolean leastOrMax){
+        if (leastOrMax)
+            sort.sortLeastToMax(this.array);
+        else
+            sort.sortMaxToLeast(this.array);
     }
 
     private int [] getRandomArray(){
@@ -38,5 +31,9 @@ public class Collection {
             System.out.print(this.array[i] + "; ");
         }
         System.out.println(" ");
+    }
+
+    public void setSort(Sort sort) {
+        this.sort = sort;
     }
 }
