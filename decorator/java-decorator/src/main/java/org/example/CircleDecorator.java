@@ -3,15 +3,9 @@ package org.example;
 import java.awt.*;
 
 public class CircleDecorator extends BaseDecorator{
-    private int x;
-    private int y;
-    private int r;
 
     public CircleDecorator(GraphicElement graphicElement) {
         super(graphicElement);
-        this.x = graphicElement.getX();
-        this.y = graphicElement.getY();
-        this.r = graphicElement.getH();
     }
 
     @Override

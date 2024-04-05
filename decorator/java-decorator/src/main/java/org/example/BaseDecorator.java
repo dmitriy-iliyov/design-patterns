@@ -4,9 +4,9 @@ import java.awt.*;
 
 public class BaseDecorator implements GraphicElement{
     private GraphicElement graphicElement;
-    private int x;
-    private int y;
-    private int r;
+    protected int x;
+    protected int y;
+    protected int r;
 
     public BaseDecorator(GraphicElement graphicElement) {
         this.graphicElement = graphicElement;
