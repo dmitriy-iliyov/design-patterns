@@ -3,19 +3,12 @@ package org.example;
 
 public class Collection {
     private Sort sort;
-    private int [] array;
-    private int count;
+    private final int [] array;
+    private final int count;
 
     public Collection(int count) {
         this.count = count;
         this.array = getRandomArray();
-    }
-
-    public void sortArray(boolean leastOrMax){
-        if (leastOrMax)
-            sort.sortLeastToMax(this.array);
-        else
-            sort.sortMaxToLeast(this.array);
     }
 
     private int [] getRandomArray(){
@@ -26,14 +19,25 @@ public class Collection {
         return _array;
     }
 
+    public void setSort(Sort sort) {
+        this.sort = sort;
+    }
+
+    public void sortArray(boolean leastOrMax){
+        if(sort != null){
+            if (leastOrMax)
+                sort.sortLeastToMax(this.array);
+            else
+                sort.sortMaxToLeast(this.array);
+        }
+        else
+            System.out.println("Set sort!");
+    }
+
     public void printArray(){
         for (int i = 0; i < this.count; i++){
             System.out.print(this.array[i] + "; ");
         }
         System.out.println(" ");
-    }
-
-    public void setSort(Sort sort) {
-        this.sort = sort;
     }
 }
