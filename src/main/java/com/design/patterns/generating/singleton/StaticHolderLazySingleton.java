@@ -1,26 +1,14 @@
-package org.example;
+package com.design.patterns.generating.singleton;
 
-import java.util.UUID;
+public class StaticHolderLazySingleton {
 
-public class BillPughLazySingleton {
-
-    private String data;
-
-
-    private BillPughLazySingleton() {
-        this.data = UUID.randomUUID().toString();
-    }
+    private StaticHolderLazySingleton() {}
 
     private static class InstanceHolder {
-        private final static BillPughLazySingleton INSTANCE = new BillPughLazySingleton();
+        private final static StaticHolderLazySingleton INSTANCE = new StaticHolderLazySingleton();
     }
 
-    public static BillPughLazySingleton getInstance() {
+    public static StaticHolderLazySingleton getInstance() {
         return InstanceHolder.INSTANCE;
     }
-
-    public String getData() {
-        return this.data;
-    }
-
 }

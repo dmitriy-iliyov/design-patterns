@@ -1,4 +1,4 @@
-package org.example;
+package com.design.patterns.behavioral.state;
 
 
 public abstract class ConnectionState {

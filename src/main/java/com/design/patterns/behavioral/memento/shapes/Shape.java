@@ -1,4 +1,4 @@
-package org.example.shapes;
+package com.design.patterns.behavioral.memento.shapes;
 
 import java.io.Serializable;
 

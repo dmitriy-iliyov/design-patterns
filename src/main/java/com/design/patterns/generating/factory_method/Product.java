@@ -1,4 +1,4 @@
-package org.example;
+package com.design.patterns.generating.factory_method;
 
 public interface Product {
 

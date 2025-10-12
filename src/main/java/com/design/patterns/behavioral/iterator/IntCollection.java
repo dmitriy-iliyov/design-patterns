@@ -1,6 +1,6 @@
-package org.example;
+package com.design.patterns.behavioral.iterator;
 
-public class IntCollection implements IterableCollection{
+public class IntCollection implements IterableCollection {
     protected int[] array;
     protected int count = 20;
 
@@ -14,8 +14,10 @@ public class IntCollection implements IterableCollection{
         return new SimpleIterator();
     }
 
-    private class SimpleIterator implements Iterator{
+    private class SimpleIterator implements Iterator {
+
         private int index;
+
         @Override
         public boolean hasNext() {
             return index < array.length;
@@ -34,7 +36,7 @@ public class IntCollection implements IterableCollection{
         }
     }
 
-    private static int [] getRandomArray(int count){
+    private static int [] getRandomArray(int count) {
         int [] _array = new int[count];
         for (int i = 0; i < count; i++){
             _array[i] = (int)(Math.random()*100);
@@ -42,7 +44,7 @@ public class IntCollection implements IterableCollection{
         return _array;
     }
 
-    public static void printArray(int [] array, int count){
+    public static void printArray(int [] array, int count) {
         for (int i = 0; i < count; i++){
             System.out.print(array[i] + "; ");
         }

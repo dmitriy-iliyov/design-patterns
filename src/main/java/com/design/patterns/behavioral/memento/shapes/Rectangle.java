@@ -1,4 +1,4 @@
-package org.example.shapes;
+package com.design.patterns.behavioral.memento.shapes;
 
 public class Rectangle extends BaseShape {
     public Rectangle(int x, int y, String color) {

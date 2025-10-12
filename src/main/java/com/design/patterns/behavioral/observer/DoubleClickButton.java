@@ -1,6 +1,7 @@
-package org.example;
+package com.design.patterns.behavioral.observer;
 
-public class DoubleClickButton{
+public class DoubleClickButton {
+
     EventManager eventManager;
     private String eventType;
 
@@ -8,8 +9,9 @@ public class DoubleClickButton{
         this.eventManager = new EventManager(eventType);
         this.eventType = eventType;
     }
+
     public void doubleClick(){
-        eventManager.notifyy(eventType);
+        eventManager.notifySubscribers(eventType);
     }
 
 }

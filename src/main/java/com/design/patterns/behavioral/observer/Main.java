@@ -1,4 +1,4 @@
-package org.example;
+package com.design.patterns.behavioral.observer;
 
 
 public class Main {

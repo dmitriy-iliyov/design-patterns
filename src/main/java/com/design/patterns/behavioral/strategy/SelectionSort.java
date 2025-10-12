@@ -1,8 +1,8 @@
-package org.example;
+package com.design.patterns.behavioral.strategy;
 
-public class SelectionSort implements Sort{
+public class SelectionSort implements Sort {
     @Override
-    public void sortLeastToMax(int[] array) {
+    public void increase(int[] array) {
         for(int i = array.length - 1; i >= 0; i--){
             int max = array[i];
             int maxIndex = i;
@@ -18,7 +18,7 @@ public class SelectionSort implements Sort{
     }
 
     @Override
-    public void sortMaxToLeast(int[] array) {
+    public void decrease(int[] array) {
         for(int i = array.length - 1; i >= 0; i--){
             int min = array[i];
             int minIndex = i;

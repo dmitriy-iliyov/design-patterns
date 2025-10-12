@@ -1,7 +1,7 @@
 package com.design.patterns.behavioral.memento.shapes;
 
-public class Triangl extends BaseShape {
-    public Triangl(int x, int y, String color) {
+public class Triangle extends BaseShape {
+    public Triangle(int x, int y, String color) {
         super(x, y, color);
     }
 }

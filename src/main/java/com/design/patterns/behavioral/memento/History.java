@@ -1,6 +1,6 @@
-package org.example;
+package com.design.patterns.behavioral.memento;
 
-import org.example.shapes.Shape;
+import com.design.patterns.behavioral.memento.shapes.Shape;
 
 import java.util.ArrayList;
 import java.util.List;

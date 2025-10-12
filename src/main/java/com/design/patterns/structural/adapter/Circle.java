@@ -1,4 +1,4 @@
-package org.example;
+package com.design.patterns.structural.adapter;
 
 public class Circle {
     protected double ro;

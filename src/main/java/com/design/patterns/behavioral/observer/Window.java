@@ -1,6 +1,7 @@
-package org.example;
+package com.design.patterns.behavioral.observer;
 
 public class Window implements EventListener{
+
     String model;
 
     public Window(String model) {

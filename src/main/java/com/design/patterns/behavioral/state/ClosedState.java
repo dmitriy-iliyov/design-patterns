@@ -1,6 +1,6 @@
-package org.example;
+package com.design.patterns.behavioral.state;
 
-public class ClosedState extends ConnectionState{
+public class ClosedState extends ConnectionState {
 
     public ClosedState(TCP tcp) {
         super(tcp);

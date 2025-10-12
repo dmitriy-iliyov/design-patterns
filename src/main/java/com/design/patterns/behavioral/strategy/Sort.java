@@ -1,6 +1,6 @@
-package org.example;
+package com.design.patterns.behavioral.strategy;
 
 public interface Sort {
-    void sortLeastToMax(int [] array);
-    void sortMaxToLeast(int [] array);
+    void increase(int [] array);
+    void decrease(int [] array);
 }

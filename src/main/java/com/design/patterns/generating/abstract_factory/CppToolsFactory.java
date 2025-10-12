@@ -1,6 +1,7 @@
-package org.example;
+package com.design.patterns.generating.abstract_factory;
 
-public class CppToolsFactory implements AbstractFactory{
+public class CppToolsFactory implements AbstractFactory {
+
     @Override
     public Validator createValidator() {
         return new CppValidator();

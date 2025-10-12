@@ -1,10 +1,10 @@
-package org.example;
+package com.design.patterns.structural.decorator;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.awt.*;
 
 
 public class Canvas extends JFrame {

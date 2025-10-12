@@ -1,6 +1,6 @@
-package org.example;
+package com.design.patterns.generating.abstract_factory;
 
-public class JavaToolsFactory implements AbstractFactory{
+public class JavaToolsFactory implements AbstractFactory {
     @Override
     public Validator createValidator() {
         return new JavaValidator();

@@ -1,25 +1,29 @@
-package org.example;
+package com.design.patterns.behavioral.strategy;
 
-public class InserSort implements Sort{
+public class InserSort implements Sort {
     @Override
-    public void sortLeastToMax(int[] array) {
-        for (int i = 1; i < array.length; i++){
-            for (int j = i; j > 0 && array[j - 1] > array[j]; j--){
-                int tmp = array[j - 1];
-                array[j -1] = array[j];
-                array[j] = tmp;
+    public void increase(int[] array) {
+        for(int i = 1; i < array.length; i++){
+            int ai = array[i];
+            int j = i - 1;
+            while (j >= 0 && array[j] > ai) {
+                array[j + 1] = array[j];
+                j--;
             }
+            array[j + 1] = ai;
         }
     }
 
     @Override
-    public void sortMaxToLeast(int[] array) {
-        for (int i = 1; i < array.length; i++){
-            for (int j = i; j > 0 && array[j - 1] < array[j]; j--){
-                int tmp = array[j - 1];
-                array[j -1] = array[j];
-                array[j] = tmp;
+    public void decrease(int[] array) {
+        for(int i = 1; i < array.length; i++){
+            int ai = array[i];
+            int j = i - 1;
+            while (j >= 0 && array[j] < ai) {
+                array[j + 1] = array[j];
+                j--;
             }
+            array[j + 1] = ai;
         }
     }
 }

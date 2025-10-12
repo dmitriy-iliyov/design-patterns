@@ -1,36 +1,36 @@
-package org.example;
+package com.design.patterns.behavioral.strategy;
 
 
 public class Main {
     public static void main(String[] args) {
         Sort sort = new BubbleSort();
-        Collection collection = new Collection(20);
-        collection.setSort(sort);
-        collection.printArray();
-        collection.sortArray(true);
-        collection.printArray();
-        collection.sortArray(false);
-        collection.printArray();
+        CollectionWrapper collectionWrapper = new CollectionWrapper(20);
+        collectionWrapper.setSort(sort);
+        collectionWrapper.printArray();
+        collectionWrapper.sortArray(true);
+        collectionWrapper.printArray();
+        collectionWrapper.sortArray(false);
+        collectionWrapper.printArray();
         Sort sort1 = new SelectionSort();
-        collection.setSort(sort1);
-        collection.printArray();
-        collection.sortArray(true);
-        collection.printArray();
-        collection.sortArray(false);
-        collection.printArray();
+        collectionWrapper.setSort(sort1);
+        collectionWrapper.printArray();
+        collectionWrapper.sortArray(true);
+        collectionWrapper.printArray();
+        collectionWrapper.sortArray(false);
+        collectionWrapper.printArray();
         Sort sort2 = new ShellSort();
-        collection.setSort(sort2);
-        collection.printArray();
-        collection.sortArray(true);
-        collection.printArray();
-        collection.sortArray(false);
-        collection.printArray();
+        collectionWrapper.setSort(sort2);
+        collectionWrapper.printArray();
+        collectionWrapper.sortArray(true);
+        collectionWrapper.printArray();
+        collectionWrapper.sortArray(false);
+        collectionWrapper.printArray();
         Sort sort3 = new InserSort();
-        collection.setSort(sort3);
-        collection.printArray();
-        collection.sortArray(true);
-        collection.printArray();
-        collection.sortArray(false);
-        collection.printArray();
+        collectionWrapper.setSort(sort3);
+        collectionWrapper.printArray();
+        collectionWrapper.sortArray(true);
+        collectionWrapper.printArray();
+        collectionWrapper.sortArray(false);
+        collectionWrapper.printArray();
     }
 }

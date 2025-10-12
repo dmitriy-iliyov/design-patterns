@@ -1,8 +1,9 @@
-package org.example;
+package com.design.patterns.behavioral.strategy;
 
-public class ShellSort implements Sort{
+public class ShellSort implements Sort {
+
     @Override
-    public void sortLeastToMax(int[] array) {
+    public void increase(int[] array) {
         for(int step = array.length/2; step > 0; step/=2){
             for (int i = step; i < array.length; i++){
                 for (int j = i - step; j >= 0 && array[j] > array[j + step]; j -= step){
@@ -15,7 +16,7 @@ public class ShellSort implements Sort{
     }
 
     @Override
-    public void sortMaxToLeast(int[] array) {
+    public void decrease(int[] array) {
         for(int step = array.length/2; step > 0; step/=2){
             for (int i = step; i < array.length; i++){
                 for (int j = i - step; j >= 0 && array[j] < array[j + step]; j -= step){

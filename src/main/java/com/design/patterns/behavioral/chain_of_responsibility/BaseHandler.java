@@ -1,4 +1,4 @@
-package com.design.patterns.behavioral.chain_of_responsiblity;
+package com.design.patterns.behavioral.chain_of_responsibility;
 
 public class BaseHandler implements Handler {
 

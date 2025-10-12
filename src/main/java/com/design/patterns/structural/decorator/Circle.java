@@ -1,4 +1,4 @@
-package org.example;
+package com.design.patterns.structural.decorator;
 
 import java.awt.*;
 

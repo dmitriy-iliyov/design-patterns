@@ -1,4 +1,4 @@
-package org.example;
+package com.design.patterns.structural.flyweight;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;

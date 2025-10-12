@@ -1,7 +1,6 @@
-package org.example;
+package com.design.patterns.generating.factory_method;
 
-public class Boat implements Product{
-
+public class Boat implements Product {
 
     @Override
     public void doSomething() {

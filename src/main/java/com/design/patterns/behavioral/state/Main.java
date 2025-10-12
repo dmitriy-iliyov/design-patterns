@@ -1,4 +1,4 @@
-package org.example;
+package com.design.patterns.behavioral.state;
 
 public class Main {
     public static void main(String[] args) {

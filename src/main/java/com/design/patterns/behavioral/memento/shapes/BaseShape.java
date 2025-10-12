@@ -1,6 +1,5 @@
-package org.example.shapes;
+package com.design.patterns.behavioral.memento.shapes;
 
-import org.example.shapes.Shape;
 
 public class BaseShape implements Shape {
     private int x, y;

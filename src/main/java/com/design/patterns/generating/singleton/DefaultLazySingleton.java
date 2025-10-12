@@ -1,19 +1,16 @@
-package org.example;
+package com.design.patterns.generating.singleton;
 
 
 public class DefaultLazySingleton {
 
-    private static DefaultLazySingleton instance;
-    public String value;
+    private static DefaultLazySingleton INSTANCE;
 
-    private DefaultLazySingleton(String value){
-        this.value = value;
-    }
+    private DefaultLazySingleton() {}
 
-    public static DefaultLazySingleton getInstance(String value){
-        if(instance == null){
-            instance = new DefaultLazySingleton(value);
+    public static DefaultLazySingleton getInstance() {
+        if(INSTANCE == null){
+            INSTANCE = new DefaultLazySingleton();
         }
-        return instance;
+        return INSTANCE;
     }
 }

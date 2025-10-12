@@ -1,4 +1,4 @@
-package org.example;
+package com.design.patterns.structural.adapter;
 
 public class Point implements PointInterface{
     private int X;

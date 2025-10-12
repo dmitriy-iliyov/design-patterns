@@ -1,12 +1,12 @@
-package org.example;
+package com.design.patterns.behavioral.strategy;
 
 
-public class Collection {
+public class CollectionWrapper {
     private Sort sort;
     private final int [] array;
     private final int count;
 
-    public Collection(int count) {
+    public CollectionWrapper(int count) {
         this.count = count;
         this.array = getRandomArray();
     }
@@ -26,9 +26,9 @@ public class Collection {
     public void sortArray(boolean leastOrMax){
         if(sort != null){
             if (leastOrMax)
-                sort.sortLeastToMax(this.array);
+                sort.increase(this.array);
             else
-                sort.sortMaxToLeast(this.array);
+                sort.decrease(this.array);
         }
         else
             System.out.println("Set sort!");

@@ -1,4 +1,4 @@
-package org.example;
+package com.design.patterns.structural.adapter;
 public class Main {
     public static void main(String[] args) {
         Point a = new Point();

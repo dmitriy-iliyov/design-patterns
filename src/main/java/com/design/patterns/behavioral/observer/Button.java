@@ -1,6 +1,7 @@
-package org.example;
+package com.design.patterns.behavioral.observer;
 
-public class Button{
+public class Button {
+
     public EventManager eventManager;
     private String eventType;
 
@@ -10,6 +11,6 @@ public class Button{
     }
 
     public void click(){
-        eventManager.notifyy(this.eventType);
+        eventManager.notifySubscribers(this.eventType);
     }
 }

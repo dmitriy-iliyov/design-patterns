@@ -1,9 +1,10 @@
-package org.example;
+package com.design.patterns.behavioral.state;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class UI {
+
     private TCP tcp;
     private static JTextField textField = new JTextField();
 
