@@ -25,3 +25,14 @@ target/
 *.iml
 mvnw
 mvnw.cmd
+
+*.env
+*.docker-env
+*.crt
+*.p12
+
+TODO
+
+*/ssl
+
+*.txt
