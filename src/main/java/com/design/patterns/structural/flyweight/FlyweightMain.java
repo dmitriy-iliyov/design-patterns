@@ -5,7 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class FlyweightMain extends Application {
 
     private final static int CANVAS_SIZE = 500;
     private final static int FIGURES_COUNT = 10000;

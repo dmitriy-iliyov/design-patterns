@@ -1,6 +1,7 @@
 package com.design.patterns.structural.adapter;
 
 public class Circle {
+
     protected double ro;
     protected double phi;
     protected int radius;

@@ -1,9 +1,9 @@
 package com.design.patterns.generating.factory_method;
 
-public class BoatCreator extends Creator {
+public class BoatCreator implements Creator {
 
     @Override
-    protected Product createProduct() {
+    public Transport createProduct() {
         return new Boat();
     }
 }

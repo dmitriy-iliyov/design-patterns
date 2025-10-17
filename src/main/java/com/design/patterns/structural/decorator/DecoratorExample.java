@@ -1,16 +1,11 @@
-package structural;
+package com.design.patterns.structural.decorator;
 
-import com.design.patterns.structural.decorator.Canvas;
-import com.design.patterns.structural.decorator.Circle;
-import com.design.patterns.structural.decorator.CircleDecorator;
-import org.junit.jupiter.api.Test;
 
-public class DecoratorTest {
+public class DecoratorExample {
 
     private final static int CANVAS_SIZE = 500;
 
-    @Test
-    public void test() {
+    public static void main(String [] args) throws InterruptedException {
         Canvas canvas = Canvas.getCanvas();
         Circle circle = new Circle(random(),random(),30);
         Circle circle1 = new Circle(random(),random(),20);
@@ -18,6 +13,8 @@ public class DecoratorTest {
         canvas.addFigure(circle, circleDecorator);
         canvas.setSize(CANVAS_SIZE, CANVAS_SIZE);
         canvas.setVisible(true);
+
+        Thread.sleep(5000);
     }
 
     public static int random(){

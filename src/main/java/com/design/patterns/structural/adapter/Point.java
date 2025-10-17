@@ -1,6 +1,7 @@
 package com.design.patterns.structural.adapter;
 
-public class Point implements PointInterface{
+public class Point implements Pointable {
+
     private int X;
     private int Y;
 
@@ -14,10 +15,12 @@ public class Point implements PointInterface{
         this.Y = y;
     }
 
+    @Override
     public int getX() {
         return X;
     }
 
+    @Override
     public int getY() {
         return Y;
     }

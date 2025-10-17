@@ -2,7 +2,7 @@ package com.design.patterns.behavioral.observer;
 
 public class DoubleClickButton {
 
-    EventManager eventManager;
+    private EventManager eventManager;
     private String eventType;
 
     public DoubleClickButton(String eventType) {
@@ -14,4 +14,11 @@ public class DoubleClickButton {
         eventManager.notifySubscribers(eventType);
     }
 
+    public EventManager getEventManager() {
+        return eventManager;
+    }
+
+    public String getEventType() {
+        return eventType;
+    }
 }

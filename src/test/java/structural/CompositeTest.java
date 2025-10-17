@@ -1,8 +1,13 @@
-package com.design.patterns.structural.composite;
+package structural;
 
+import com.design.patterns.structural.composite.Composite;
+import com.design.patterns.structural.composite.Element;
+import org.junit.jupiter.api.Test;
 
-public class Main {
-    public static void main(String[] args) {
+public class CompositeTest {
+
+    @Test
+    public void test() {
         Composite composite1 = new Composite();
         Composite composite2 = new Composite();
         composite1.addComponent(new Element("name1"));

@@ -1,23 +1,30 @@
 package com.design.patterns.behavioral.memento;
 
-import com.design.patterns.behavioral.memento.shapes.Shape;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class History {
+    private final Editor editor;
+    private final List<Editor.Memento> editorMementos;
 
-    private List<Memento> mementos ;
-
-    public History(){
-        this.mementos = new ArrayList<>();
+    public History(Editor editor) {
+        this.editor = editor;
+        this.editorMementos = new ArrayList<>();
     }
 
-    public void saveBackup(Memento memento){
-        mementos.add(memento);
+    public void saveBackup() {
+        editorMementos.add(editor.save());
     }
 
-    public List<Shape> restoreBackup(){
-        return mementos.get(mementos.size() - 1).restore();
+    public void restoreBackup() {
+        if (editorMementos.isEmpty()) {
+            return;
+        }
+        Editor.Memento editorMemento = editorMementos.remove(editorMementos.size() - 1);
+        editor.restore(editorMemento);
+    }
+
+    public boolean hasBackups() {
+        return !editorMementos.isEmpty();
     }
 }

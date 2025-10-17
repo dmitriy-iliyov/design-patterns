@@ -1,5 +1,6 @@
 package com.design.patterns.structural.adapter;
-public class Main {
+
+public class AdapterExample {
     public static void main(String[] args) {
         Point a = new Point();
         a.setX(2);

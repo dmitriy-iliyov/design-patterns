@@ -2,7 +2,7 @@ package com.design.patterns.behavioral.observer;
 
 public class Button {
 
-    public EventManager eventManager;
+    private EventManager eventManager;
     private String eventType;
 
     public Button(String eventType) {
@@ -12,5 +12,13 @@ public class Button {
 
     public void click(){
         eventManager.notifySubscribers(this.eventType);
+    }
+
+    public EventManager getEventManager() {
+        return eventManager;
+    }
+
+    public String getEventType() {
+        return eventType;
     }
 }

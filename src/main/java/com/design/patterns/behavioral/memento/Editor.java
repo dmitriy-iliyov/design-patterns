@@ -9,65 +9,77 @@ import java.util.Base64;
 import java.util.List;
 
 public class Editor {
-
-    private List<Shape> allShapes;
-    private int shapeCount;
-    private History history;
+    private List<Shape> state;
 
     public Editor() {
-        this.allShapes = new ArrayList<>();
-        this.history = new History();
+        this.state = new ArrayList<>();
     }
 
-    public void addShape(Shape shape){
-        allShapes.add(shape);
-        shapeCount++;
+    public void addShape(Shape shape) {
+        state.add(shape);
     }
 
-    public void delShape(Shape shape){
-        allShapes.remove(shape);
-        shapeCount--;
+    public void delShape(Shape shape) {
+        state.remove(shape);
     }
 
-    public void printShapes(){
-        for(Shape shape: allShapes)
+    public int getShapeCount() {
+        return state.size();
+    }
+
+    public void printShapes() {
+        for (Shape shape : state) {
             System.out.println(shape);
+        }
     }
 
-    public void saveState(){
-        history.saveBackup(new Memento(this, shapeCount));
+    public Memento save() {
+        return new EditorMemento(backup(), state.size());
     }
 
-    public void restoreState(){
-        allShapes = history.restoreBackup();
+    public void restore(Memento memento) {
+        if (memento instanceof EditorMemento) {
+            state = ((EditorMemento) memento).getState();
+        }
     }
 
-    public String backup(){
-        ByteArrayOutputStream baos;
-        try {
-            baos = new ByteArrayOutputStream();
-            ObjectOutputStream oos = new ObjectOutputStream(baos);
-            for (Shape shape : allShapes)
+    private String backup() {
+        try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
+             ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+
+            for (Shape shape : state) {
                 oos.writeObject(shape);
-            oos.close();
+            }
             return Base64.getEncoder().encodeToString(baos.toByteArray());
         } catch (IOException e) {
-            return "";
+            throw new RuntimeException("Failed to backup state", e);
         }
     }
 
-    public List<Shape> restore(String data, int shapesCount) {
-        List<Shape> restoredShapes = new ArrayList<>();
-        try {
-            ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(Base64.getDecoder().decode(data)));
-            for (int i = 0; i < shapesCount; i++)
-                restoredShapes.add((Shape) ois.readObject());
-            ois.close();
-        } catch (ClassNotFoundException e) {
-            System.out.print("ClassNotFoundException occurred.");
-        } catch (IOException e) {
-            System.out.print("IOException occurred.");
+    public interface Memento {}
+
+    private static final class EditorMemento implements Memento {
+
+        private final String backup;
+        private final int shapesCount;
+
+        private EditorMemento(String backup, int shapesCount) {
+            this.backup = backup;
+            this.shapesCount = shapesCount;
         }
-        return restoredShapes;
+
+        private List<Shape> getState() {
+            List<Shape> restoredShapes = new ArrayList<>();
+            try (ObjectInputStream ois = new ObjectInputStream(
+                    new ByteArrayInputStream(Base64.getDecoder().decode(backup)))) {
+
+                for (int i = 0; i < shapesCount; i++) {
+                    restoredShapes.add((Shape) ois.readObject());
+                }
+            } catch (ClassNotFoundException | IOException e) {
+                throw new RuntimeException("Failed to restore memento", e);
+            }
+            return restoredShapes;
+        }
     }
 }

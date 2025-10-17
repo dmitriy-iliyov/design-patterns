@@ -1,8 +1,8 @@
 package com.design.patterns.generating.factory_method;
 
-public class TruckCreator extends Creator{
+public class TruckCreator implements Creator{
     @Override
-    protected Product createProduct() {
+    public Transport createProduct() {
         return new Truck();
     }
 }

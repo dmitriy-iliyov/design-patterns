@@ -1,6 +1,6 @@
 package com.design.patterns.behavioral.state;
 
-public class ListeningState extends ConnectionState{
+public class ListeningState extends ConnectionState {
 
     public ListeningState(TCP tcp) {
         super(tcp);

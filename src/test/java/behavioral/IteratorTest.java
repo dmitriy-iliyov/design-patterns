@@ -14,7 +14,6 @@ public class IteratorTest {
         while (iterator.hasNext()){
             System.out.println(iterator.getNext());
         }
-
         OrderedIntCollection orderedIntCollection = new OrderedIntCollection();
         Iterator orderedIterator = orderedIntCollection.getIterator();
         while (orderedIterator.hasNext()){
